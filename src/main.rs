@@ -12,67 +12,6 @@ use image::{
     imageops
 };
 use image::ColorType;
-// use image::buffer::{
-//     ImageBuffer,
-//     RgbaImage,
-//     Pixel
-// };
-// use image::imageops;
-// use image::{GenericImage, SubImage};
-// use image::dynimage::DynamicImage;
-//
-// fn avg_rgb(buf: DynamicImage) -> Rgba<u8> {
-//
-// /*
-// impl<P, Container> ImageBuffer<P, Container>
-// where P: Pixel + 'static,
-//       P::Subpixel: 'static,
-//       Container: Deref<Target=[P::Subpixel]> {
-// */
-//
-//     let mut accR = 0.0 as f32;
-//     let mut accG = 0.0 as f32;
-//     let mut accB = 0.0 as f32;
-//     let mut accA = 0.0 as f32;
-//     let mut counter = 0 as u32;
-//
-//     for (_, _, pixel) in buf.to_rgba().enumerate_pixels() {
-//         // here accumulate the values of ARGB pixel vector
-//         counter = counter + 1;
-//     }
-//
-//     //convert counter to float first i think
-//     accR = accR / counter as f32;
-//     accG = accG / counter as f32;
-//     accB = accB / counter as f32;
-//     accA = accA / counter as f32;
-//
-//     //create Rgba instance, return it
-// }
-//
-// fn crop_as_grid<I: GenericImage + 'static>(
-//     buf: &mut I,
-//     // buf: RgbaImage,
-//     row: u32,
-//     col: u32,
-//     rows: u32,
-//     cols: u32) -> SubImage<I> where I::Pixel: 'static,
-//           <I::Pixel as Pixel>::Subpixel: 'static  {
-//
-//     let (dx, dy) = buf.dimensions();
-//     let col_size = dx / cols;
-//     let row_size = dy / rows;
-//
-//     //this shit is mostly wrong, but im doing this offline on a plane,
-//     //need tests to validate...also check that it compiles
-//     let start_w = row_size * row;
-//     let end_w = start_w + 1;
-//
-//     let start_c = col_size * col;
-//     let end_c = start_c + 1;
-//
-//     imageops::crop(buf, start_w, start_c, end_w, end_c);
-// }
 
 fn main() {
 
@@ -122,18 +61,11 @@ fn main() {
             //create Rgba Pixel instance
             let pix = image::Rgba([accR, accG, accB, accA]);
 
-
-            // let subimg = crop_as_grid(target_img_buf, r, c, rows, cols);
-            // let avg_argb_of_sub = avg_rgb(DynamicImage::ImageRgba8(subimg.to_image()));
-            //
-            // //we now have avg argb of each SubImage
-            // //TODO
-            // /*
-            //     - for a list of images, compute avg argb of each img
-            //     - match the subimage argb avg with the closest avg argb of the images in the set
-            // */
+            //TODO
+            /*
+                - for a list of images, compute avg argb of each img
+                - match the subimage argb avg with the closest avg argb of the images in the set
+            */
         }
     }
-
-
 }
