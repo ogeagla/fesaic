@@ -1,0 +1,9 @@
+[package]
+name = "fesaic"
+version = "0.0.1"
+authors = [ "Octavian Geagla <ogeagla@gmail.com>" ]
+# build = "src/build.rs"
+
+[dependencies]
+image = "*"
+num = "*"
